@@ -23,6 +23,11 @@ process.on('uncaughtException', (ex) => {
   process.exit(1)
 })
 const DEBUG = process.env.NODE_ENV === 'development'
+var accountSid = process.env.TWILIO_API_KEY;
+var authToken = process.env.TWILIO_AUTH_TOKEN;
+const client = require('twilio')(accountSid, authToken); 
+
+
 setupAuth0Passport()
 seedZipCodes()
 setupUserNotificationObservers()

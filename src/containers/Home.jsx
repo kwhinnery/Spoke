@@ -62,7 +62,7 @@ class Home extends React.Component {
     return (
       <div>
         <div className={css(styles.header)}>
-        Spoke is a new way to run campaigns using text messaging. We are currently in private beta.
+        Spoke is a new way to run campaigns using text messaging. Ask an administrator for an invitation.
         </div>
         <div>
           <a className={css(styles.link)} href='mailto:help@gearshift.co'>Get in touch if you'd like an invitation.</a>

@@ -8,8 +8,8 @@ import faker from 'faker'
 let twilio = null
 const MAX_SEND_ATTEMPTS = 5
 
-if (process.env.TWILIO_API_KEY && process.env.TWILIO_AUTH_TOKEN) {
-  twilio = Twilio(process.env.TWILIO_API_KEY, process.env.TWILIO_AUTH_TOKEN)
+if ( process.env.TWILIO_API_KEY  && process.env.TWILIO_AUTH_TOKEN ) {
+  twilio = Twilio( process.env.TWILIO_API_KEY, process.env.TWILIO_AUTH_TOKEN)
 }
 
 async function convertMessagePartsToMessage(messageParts) {
@@ -43,7 +43,7 @@ async function convertMessagePartsToMessage(messageParts) {
 async function findNewCell() {
 
   if (!twilio) {
-    return { availablePhoneNumbers: [{ phone_number: '+15005550006' }] }
+    return { availablePhoneNumbers: [{ phone_number: '+15005550006' }]}
   }
   return new Promise((resolve, reject) => {
     twilio.availablePhoneNumbers('US').local.list({}, (err, data) => {
